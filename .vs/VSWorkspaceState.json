@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\01 - Testes de Unidade",
+    "\\01 - Testes de Unidade\\Demo.Tests",
+    "\\02 - TDD",
+    "\\02 - TDD\\src",
+    "\\02 - TDD\\src\\NerdStore.Core",
+    "\\02 - TDD\\src\\NerdStore.Vendas.Domain",
+    "\\02 - TDD\\tests",
+    "\\02 - TDD\\tests\\NerdStore.Vendas.Application.Tests",
+    "\\02 - TDD\\tests\\NerdStore.Vendas.Domain.Tests"
+  ],
+  "SelectedNode": "\\02 - TDD\\src\\NerdStore.Vendas.Domain\\Pedido.cs",
+  "PreviewInSolutionExplorer": false
+}

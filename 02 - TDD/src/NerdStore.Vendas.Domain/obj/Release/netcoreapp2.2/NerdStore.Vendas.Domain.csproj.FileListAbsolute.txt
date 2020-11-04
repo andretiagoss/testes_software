@@ -1,0 +1,12 @@
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\bin\Release\netcoreapp2.2\NerdStore.Vendas.Domain.deps.json
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\bin\Release\netcoreapp2.2\NerdStore.Vendas.Domain.dll
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\bin\Release\netcoreapp2.2\NerdStore.Vendas.Domain.pdb
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\bin\Release\netcoreapp2.2\NerdStore.Core.dll
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\bin\Release\netcoreapp2.2\NerdStore.Core.pdb
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.csprojAssemblyReference.cache
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.AssemblyInfoInputs.cache
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.AssemblyInfo.cs
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.csproj.CoreCompileInputs.cache
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.csproj.CopyComplete
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.dll
+C:\Projetos\TestesDeSoftware\02 - TDD\src\NerdStore.Vendas.Domain\obj\Release\netcoreapp2.2\NerdStore.Vendas.Domain.pdb

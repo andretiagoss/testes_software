@@ -1,0 +1,412 @@
+A importância de testar
+  Porque testar
+   - para avaliar se o programa ou sistema obtem os resultados desejados de maneira satisfatória.
+   
+  Como garantir a qualidade
+   - Possuir a certificação por terceiros com padrões de qualidade que envolvem 3 fatores:
+     - Normas: 
+       - Certificação internacional ISO
+       - ABNT
+     - Orgãos Certificadores: 
+       - Inmetro
+     - Organismos Credenciadores
+       - Sistemas de Gestão em Tecnologia da Informação - OTI
+  	   - CMMI
+  	   - MPS-BR
+  	 - Sistemas de Gestão Ambiental - OCA
+  
+  Como testar:
+   - Teste de Caixa Preta
+     - Teste funcional e testes de regressão realizado por via interface do usuário.
+   - Teste de Caixa Branca
+     - Testes diretamente no código fonte para buscar bugs
+     - Testes de unidade, teste de integração, teste de carga, etc...
+	 
+  Conseguencia de não testar
+   - Bugs e problemas de qualidade
+   - Falhas de codificação
+   - Possíveis atrasos na entrega
+   - Perda de confiabilidade do cliente
+   - Desmotivação do time
+   - Aumento na rotatividade de pessoas
+   - Prejuízos financeiros
+   - Possíveis implicações legais
+  
+  Regra 10 de Myers (Glenford Myers)
+   - Esta regra estabelece que o custo da correção de defeitos é mais custoso quanto mais tarde o defeito é encontrado.
+   - Corrigir um defeito encontrado em produção custa muito mais caro do que se fosse encontrado na fase de anaálise ou desenvolvimento.
+   
+  Tipos de testes
+   - Teste de Unidade
+     - É aquele que testa uma unidade unidade do sistema, realiza o teste de forma isolada, geralmente simulando as provaveis dependencias que aquela unidade tem.
+	   Um exemplo seria o teste em uma classe de Pedido, seria um teste isolado nos métodos da classe e sem interações com outras classes.
+   
+   - Teste de integração
+     - É aquele que testa a integração entre duas ou mais partes da aplicação.
+	   Um exemplo seria a classe PedidoRepository, onde o teste vai até o banco de dados ou até uma camada de serviço externo.
+	   
+   - Teste automatizado
+     - Funciona com um teste de caixa preta, já que o sistema é testado de ponta a ponta atraves das operações executadas no sistema.
+	 - A automatização garante que todo o proceso será executado da mesma manieira que fosse um usuário utilizando a aplicação.
+	 
+   - Teste de carga
+     - Consiste em testar as capacidades da aplicação, muitas vezes até o seu limite, seria um tipo de stress test.
+	 - Seria um tipo de teste para descobrir possiveis gargalos ou para avaliar o comportamento da aplicação com determinado numero de usuários simultaneos, seria no caso para avaliar se aplicação atende a demanda ou um grande volume de requisições.
+	 
+Testes de Unidade
+  Frameworks para testes de unidade
+   - MSTest
+     - É da Microsoft
+	 - É preferencia pra que trabalha com ferramentas da Microsoft, como Visual Studio.
+     - Repositório: github.com/microsoft/testfx
+  
+   - NUnit
+     - Versão do JUnit do Java pra .net.
+	 - Site: nunit.org
+	 - Muitos projetos utilizam, até mais do MSTest.
+	
+   - XUnit
+     - Irmão mais novo do NUnit.
+	 - Site: xunit.net
+	 - É open source.
+	 - Escrito pelos criadores do NUnit pra resolver algumas coisas que não gostavam no XUnit.
+	 - Utilizado pelo time de desenvolvimnto do .NET core e ASP.NET
+	 - Instalação do framework:
+	   - Install-Package xunit
+	 - Instalação para reconhecimento do Visual Studio:
+	   - Install-Package xunit.runner.visualstudio
+  
+  Padrões e Nomenclaturas
+   - AAA - Arrange, Act, Assert
+     - Arrange
+	  - Organizar, preparar, deixar o objeto no ponto certo para atuação (Act)
+	
+	 - Act
+	   - É o metodo que se esta testando, do qual vai ser analisando seu comportamento.
+	   - É a chamada do determinado método a ser testado.
+	
+	 - Assert
+	   - É a asserção, ou seja, validar se os resultados gerados atraves da chamada do método confere com a intenção do teste.
+  
+   - Nomenclatura de Teste de Unidade
+     Padrão 1:
+	 - ObjetoEmTeste_MetodoComportamentoEmTeste_ComportamentoEsperado
+	   Ex: Pedido_AdicionarPedidoItem_DeveIncrementarUnidadesSeItemJaExistente
+	       Estoque_RetirarItem_DeveEnviarEmailSeAbaixoDe10Unidades
+	 
+	 Padrão 2:
+	 - MetodoEmTeste_EstadoEmTeste_ComportamentoEsperado
+	   Ex: AdicionarPedidoItem_ItemExistenteCarrinho_DeveIncrementarUnidadesDoItem
+	       RetirarItemEstoque_EstoqueAbaixoDe10Unidades_DeveEnviarEmailDeAviso
+	   
+  Mock
+   - São objetos que simulam o comportamento de objetos reais de forma controlada.
+   - Framework de Mock: Moq
+   - Instalação do Framework
+     Install-Package Moq
+	 
+   - Repositório: github.com/moq/moq4
+   
+  AutoMock
+   - É um automatizador de mock, é uma feature do Moq.
+   - Instalação do Framework
+     Install-Package Moq.automock
+	 
+  Bogus
+   - É o framework para geração fake/aleatório de dados.
+   - Instalação do Framework
+     Install-Package Bogus
+   - Repositório: https://github.com/bchavez/Bogus
+   
+  Recomendações:
+   - Criar um projeto de teste para cada projeto class library.
+   
+  Fluent Assertions
+   - Ref.: fluentassertions.com
+   - Repositório: github.com/fluentassertions/fluentassertions
+   - Instalação do framework: Install-Package FluentAssertions
+   
+   Fixture
+    - Utilizado para o reaproveitamento de código (métodos, propriedades, etc) entre as classes mantendo seu estado com o uso de Collection de testes.
+	
+   AngleSharp
+    - Recebe um código HTML, estrutura esse HTML com o HtmlParser de forma que seja possivel fazer query para que seja mais facil encontrar os objetos desejados.
+	- Ref.: http://anglesharp.github.io/
+   
+  Rodando testes via linha de comando
+   - Para executar os testes via linha de comando é necessário instalar um pacote do XUnit com o seguinte comando:
+     Install-Package xunit.runner.console
+   - Comando para executar o teste via console:
+     dotnet vstest Features.Tests.dll (nome da dll do projeto de teste na aplicação)
+   - Documentação do vstest:
+     https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-vstest
+	 
+  Trabalhando com testes no Visual Studio Code
+   - Instalar o plugin .Net Core Test Explorer  
+   
+  Analisando a cobertura de código dos testes (Code Covarage)
+   - Um numero aceitavel de cobertura é de 80% pra cima, porém esse numero pode ser atingido gradativamente.
+   - Não tem a necessidade de cobrir 100% do código, pois as vezes é impossivel, as vezes existem trechos de código complexo para peder tempo em criar um teste.
+   - No Visual Studio Enterprise existe uma ferramenta que avalia a cobertura de teste.
+     Menu Test --> Analyze Code Covarage
+   - Ferramenta gratuida para analise de cobertura de código 
+     Repositório: github.com/OpenCover/opencover
+   
+TDD - Test Driven Development
+  O que é o TDD?
+   - É a pratica de testar um código que ainda não existe e ao longo desse teste será criado o código que por sua vez já vai nascer testado.
+   - É o desenvolvimento de uma aplicação orientado a testes
+   - O TDD possui um ciclo, o red, green and refactory.
+     - Red:
+	   Escrever um teste e assistir ele falhar, um teste que faça ele compilar, porém gerar um erro.
+	   
+	 - Gren:
+	   Escrever o minimo de código para passar no teste.
+	 
+	 - Refactory:
+	   Refatorar, melhorar o código e testar novamente.
+	   Se o teste falhar, inicia-se novamente o cliclo na mesma ordem.
+	   
+   Porque utilizar o TDD?
+    - Porque é mais rapido identificar e corrigir bugs.
+	- Porque seu código já nascerá testado e validado.
+	
+   As três leis do TDD (by Uncle Bob)
+    - Você não pode escrever nenhum código até ter escrito um teste que detecte uma possível falha.
+	- Você não pode escrever mais testes de unidade do que o suficiente para detectar a falha - não compilar é não ter efeito.
+	- Você não pode escrever mais código do que o suficiente para passar nos testes.
+	
+   Baby Steps
+    - Cada teste tem um aspecto, tem uma responsabilidade unica.
+    - É indicado para desenvolvedores que estão iniciando na prática do TDD.
+	- É utilizado quando não se tem muita confiança sobre código a ser escrito e testado. 
+   
+   Dicas pra começar com TDD
+    - Pratique os baby steps e respeite as 3 leis do TDD
+	- Saiba exatamente o que precisa entregar antes de começar
+	- Não deixe para descobrir a regra de negócio durante a codificação
+	- Tenha uma lista de anotações ou uma documentação clara sempre a mão
+	- Minta! No green o teste só precisa passar, depois utilize Mocks
+	- Mantenha os testes simples.
+	- Após a escrita de alguns testes, analise a possibilidade de reaproveitamento de objetos.
+	- Saiba quando usar TDD, nem sempre é vantajoso.
+   
+   Leitura recomendadas
+    - Test-Driven Development - Mauricio Anche
+	- Test-Driven Development - Steve Freeman Nat Price
+	- Practival Test-Driven Development using C# 7 - John Callaway, Clayton Hunt
+
+Testes de Integração
+ - Criar um projeto de teste por aplicação.
+ - Teste de integração no ASP.NET Core
+   - https://docs.microsoft.com/pt-br/aspnet/core/test/integration-tests?view=aspnetcore-2.2
+ - TestServer Class: 
+   - Classe que representa um servidor em memoria, recebe as requisições como se fosse um IIS.
+   - Ref.: https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.testhost.testserver?view=aspnetcore-3.0
+ - Testes de integração normalmente exige uma ordem, sendo assim o uso do TestCaseOrderer do XUnit. 
+
+BDD - Behavior Driven Development
+ - Desenvolvimento guiado por comportamentos.
+ - É um estilo de desenvolvimento ligado aos comportamentos, funcionalidades para aquilo que o software se presta a fazer, do que como escrever códigos e estrategias de tecnologias.
+ - Envolver as pessoas no processo atraves do desenvolvimento de fora para dentro (Outside-in development).
+ - Escrever estórias para apresentar as necessidades de um usuário e explicar as funcionalidades da aplicação.
+ - Desenvolver aplicação guiada por cenários de testes dos comportamentos descritos nas estórias do usuário.
+ - Escrever testes de integração ou automação para validar os comportamentos como uma bateria de testes de regressão.
+ - Ciclo: 
+   1 - Mapear a necessidade
+   2 - Escrever um cenário que falhe
+   3 - Segue para a fase de codificação (utiliza nessa fase o TDD)
+   4 - Vai ver o cenário passar
+   5 - Realiza a Refatoração se necessário
+   6 - Se falhar a refatoração, reinicia o ciclo.
+   
+ - User Stories (AS A / I WANT TO / SO THAT)
+   Funcionalidade:
+   - Como um <Papel do negócio>
+   - Eu quero <Objetivo do negócio>
+   - Para <Beneficio / Resultado obtido>
+   
+   Exemplo:
+    - COMO um cliente
+    - EU QUERO colocar um produto no carrinho
+    - PARA eu comprá-lo posteriormente
+   
+ - Cenários (GIVEN / WHEN / THEN):
+   Cenário: Cenário que a operação da certo
+    - DADO QUE o cenário possui um contexto especifico (Arrange)
+    - E um outro detalhe adicional
+    - QUANDO o usuário realizar tal ação (Act)
+    - ENTÃO alguma coisa que dará certo acontecerá (Assert)
+	
+   Exemplo:
+   Cenário 1: Colocar um item disponivel no carrinho
+    - DADO QUE o produto XXX é exibido na vitrine
+    - E possui estoque acima de 0 informado
+    - E o usuário seleciona uma quantidade igual ou inferir a quantidade de estoque
+    - QUANDO o usuário clicar em adcionar o item no carrinho
+    - ENTÃO o usuário é redirecionado ao resumo do carrinho
+    - E visualiza todos os itens do carrinho
+	
+   - Cada passo do cenário se torna um método a ser validado com Arrange/Act/Assert
+
+ - Ferramentas e configuração
+   - Versão do Cucumber para .NET (ferramenta de BDD para outras plataformas na versão .NET)
+   - Utiliza o Gherkin Parser para transformar o texto em ações
+   - Compativel com todas as versões do VS atuais
+   
+   Instalação do Framework.
+   - Install-Package SpecFlow
+   
+   Instalação para reconhecimento do Visual Studio com XUnit.
+   - Install-Package SpecFlow.XUnit
+   
+Testes Automatizados
+ - Selenium
+   - Ref.: https://www.selenium.dev/
+   - Realiza a automação de ações para browsers ou seja, somente para aplicações Web.
+   - Utilizado para automatizações de testes e Web Crawling (navegar de forma automatizada na web para obter dados, como preços de lojas online pra fazer comparativos)
+   - Compativel com Visual Studio.
+     - Intalação do framework
+	   Install-Package Selenium.WebDriver
+	 
+	 - Driver do Google Chrome para utilização do Selenium 	 
+       https://chromedriver.chromium.org/downloads
+	   Obs: Baixar versão compativel com o a versão do browser utilizada. A recomendação é descompactar em "c:\WebDriver".
+	   
+	 - Drviver do Firefox
+	   https://github.com/mozilla/geckodriver/releases
+	   
+	 - DotNet Selenium Extras
+	   - Utilizado os Wait Helpers
+	   - Ref.: https://github.com/DotNetSeleniumTools/DotNetSeleniumExtras
+	   - Install-Package DotNetSeleniumExtras.WaitHelpers
+	   
+   - Configurações do Selenium 2019
+     - Criar pasta Config com as classes de configurações:
+	   - SeleniumHelper
+	   - ConfigurationHelper
+	   - appsettings.json
+	   - Browser
+	   - WebDriverFactory
+	   
+ - POM - Page Object Model
+   - É um padrão de projeto descrito por Matin Fowler
+   - Diz como criar um repositório de objetos com elementos contidos numa página Web. Sob este modelo, para cada página, deve haver uma classe correspondente.
+   - Benefícios:
+     - Reaproveitamento de código
+	 - Código mais limpo
+	 - Facilidade na manutenção
+	 - Maior independência dos testes com uma bateria de testes de regressão.
+ 
+ - Azure DevOps + Selenium
+   Ref.: https://docs.microsoft.com/en-us/azure/devops/pipelines/test/continuous-test-selenium?view=azure-devops
+   Procedimento para executar projeto de teste via prompt de comando:
+    - Publicar projeto de teste para gerar a DLL do projeto
+    - Acessar diretório onde foi publicado e executar o seguinte comando via prompt de comando:
+    - dotnet vstest [NomeDoProjetoTeste.dll]
+
+Testes de Carga
+ - Tipos de testes disponiveis:
+   - Teste de desempenho/performance
+     - É o tipo de teste que valida um cenário real, é utilizado para garantir que a aplicação responda bem a um numero de conexões esperadas, dentro de um tempo satisfatório.
+	 Ex.: Menos de 500ms para o "response time".
+	 
+   - Teste de Carga
+     - É o tipo de teste com o objetivo de encontrar o limite de capacidade da aplicação e identificar qual o gargalo (banco de dados, hardware, cache). Não é objetivo desse tipo de teste encontrar problemas funcionais na aplicação, pra isso existem outros tipos de teste (ex. unidade, integração).
+	 - É o tipo de teste que precisa ser feita se a aplicação possui picos sazonais, onde o aumento de usuário é expressivo, como periodos de promoções, natal, black-friday.
+   
+   - Teste de Stress
+     - É o tipo de teste para avaliar como a aplicação vai se comportar se um numero não previsto de requisições for disparado simultaneamente para a aplicação, ou para determinada funcionalidade da aplicação.
+
+ - Ferramentas 
+   - Azure Devops Load Testing - Interrompido
+   - Apache JMeter (Open Source)
+     - É um software de código aberto, um aplicativo Java 100% puro projetado para testar o comportamento funcional de carga e medir o desempenho. Ele foi originalmente projetado para testar aplicativos da Web, mas desde então foi expandido para outras funções de teste
+	 - Funciona apenas local
+     - Site: https://jmeter.apache.org/
+	 - É a ferramenta recomendada pela Microsoft e pelo Eduardo Pires.
+	 
+   - BlazeMeter (pago)
+     - Faz integração com o JMeter
+	 - Funciona na nuvem
+     - Site: https://www.blazemeter.com/
+ 
+ - Indice de satisfação do usuário com o APDEX
+   - O APDEX mede o indice de satisfação do cliente com uma metrica (score) global para comparações.
+   - Classificação do "Response Time" pra cada request:
+     - 0ms --> 800ms = Satisfatório
+	 - 500ms --> 1500ms = Tolerável
+	 - Acima de 1500ms = Frustrante
+   - Formula do APDEX
+     APDEX = Requests Satisfatório + (Requests Toleraveis / 2) = 0,xx
+	         -------------------------------------------------
+							Total Requests
+   - APDEX Score
+     - 0.94 até 1.00 = Excelente
+	 - 0.85 até 0.93 = Bom
+	 - 0.70 até 0.84 = Aceitável
+	 - 0.50 até 0.69 = Ruim
+	 - 0.00 até 0.49 = Inaceitável
+	 
+ - Apache JMeter
+   - Baixar e descompactar o binario (.zip) na pasta c:\jMeter:
+     https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.3.zip
+	 https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.1.zip
+	 
+   - Execute o arquivo jmeter.bat em c:\jMeter\bin\
+   - Ajustar o HEAP do JMeter editando o arquivo jmeter.bat
+     set HEAP=-Xms512m -Xmx512m
+	 Ref.: https://www.programmersought.com/article/79235577612/
+	 
+   - Não usar a interface grafica para realizar os testes de carga para não consumir os recursos computacionais da maquina e influenciar no resultado dos testes.
+   
+   - Plano de teste
+     - Criar um grupo de usuários.
+	   - Numero de usuários virtuais (threads)
+	 - Adicionar Requisição HTTP
+	   - https
+	   - Nome do servidor ou IP
+	 - Utilizar a opção "Ver arvore de resultado"
+     - Adicionar Asserção de Resposta 
+	   - Informar critério de validação (ex: algum elemento da pagina)
+	 - Clicar no botão Play para executar o teste.
+	   
+ - BlazeMeter 
+   - Adicionar o BlazeMeter no Chrome
+     https://chrome.google.com/webstore/detail/blazemeter-the-continuous/mbopgmdnpcbohhpnfglgohlbhfongabi
+   - Criar o teste "TESTE DEVIO - USUARIO"
+   - Atualizar o caso de teste para "Home Page"
+   - Adicionar um novo caso de teste "Login"
+   - Adicionar um novo caso de teste "Acessar Curso"
+   - Adicionar um novo caso de teste "Acessar Aula"
+   - Adicionar um novo caso de teste "Finalizar Aula"
+   
+   
+ - Dicas finais
+   - Teste mais barato
+     Teste de unidade
+   - Segundo teste mais barato
+     Teste de Integração
+   - Teste mais caro
+     Teste de automação de interface (selenium)
+	 
+   - Para as camadas de dominio e de application uitilizar os testes de unidade.
+   - Para as camadas de infra que normalmente possuem integrações com serviços externos e a camada de apresentação utilizar os testes de integração. 
+   - Teste de unidade é focada para os pontos onde é mais dificil de dar manutenção.
+   - Teste de integração é focado para testar a aplicação de ponta a ponta, como serviços externos, banco de dados, etc.
+   - Teste de interface para é focado para validação de tela, mensagens de retornos.
+   - Teste de carga é focado para teste de aplicações na Web para validar performance, saber como a aplicação vai se comportar quando tiver um aumento de requisições simultaneas.
+      
+   
+	 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.deps.json
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.dll
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.pdb
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Data.dll
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Domain.dll
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Core.dll
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Data.pdb
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Catalogo.Domain.pdb
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\bin\Debug\netcoreapp2.2\NerdStore.Core.pdb
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.csprojAssemblyReference.cache
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.AssemblyInfoInputs.cache
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.AssemblyInfo.cs
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.csproj.CoreCompileInputs.cache
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.csproj.CopyComplete
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.dll
+C:\Projetos\TestesDeSoftware\03 - Testes de Integracao\src\NerdStore.Catalogo.Application\obj\Debug\netcoreapp2.2\NerdStore.Catalogo.Application.pdb
